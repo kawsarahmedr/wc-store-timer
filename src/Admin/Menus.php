@@ -20,7 +20,6 @@ class Menus {
 	public function __construct() {
 		add_action( 'admin_menu', array( $this, 'settings_menu' ), 55 );
 	}
-
 	/**
 	 * Settings menu.
 	 *
