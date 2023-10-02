@@ -39,7 +39,6 @@ defined( 'ABSPATH' ) || exit;
 			</td>
 		</tr>
 
-
 		<!--product-->
 		<tr valign="top">
 			<th scope="row">
