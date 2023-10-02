@@ -19,6 +19,7 @@ class Menus {
 	 */
 	public function __construct() {
 		add_action( 'admin_menu', array( $this, 'settings_menu' ), 55 );
+		add_action( 'wc_store_timer_settings_things', array( __CLASS__, 'output_things_content' ) );
 	}
 	/**
 	 * Settings menu.
@@ -35,5 +36,15 @@ class Menus {
 			'wc-store-timer',
 			array( Settings::class, 'output' )
 		);
+	}
+
+	/**
+	 * Output things content.
+	 *
+	 * @since 1.0.0
+	 */
+	public static function output_things_content() {
+
+		include __DIR__ . '/views/add-thing.php';
 	}
 }

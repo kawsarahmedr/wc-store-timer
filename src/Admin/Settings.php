@@ -23,6 +23,7 @@ class Settings extends Lib\Settings {
 	public function get_tabs() {
 		$tabs = array(
 			'general'         => __( 'General', 'wc-store-timer' ),
+			'things'         => __( 'Things', 'wc-store-timer' ),
 		);
 
 		return apply_filters( 'wc_store_timer_settings_tabs', $tabs );
@@ -237,6 +238,25 @@ class Settings extends Lib\Settings {
 		}
 
 		return apply_filters( 'wc_store_timer_get_settings_' . $tab, $settings );
+	}
+
+	/**
+	 * Output settings form.
+	 *
+	 * @param array $settings Settings.
+	 *
+	 * @return void
+	 * @since 1.0.0
+	 */
+	protected function output_form( $settings ) {
+		$current_tab = $this->get_current_tab();
+		/**
+		 * Action hook to output settings form.
+		 *
+		 * @since 1.0.0
+		 */
+		do_action( 'wc_store_timer_settings_' . $current_tab );
+		parent::output_form( $settings );
 	}
 
 	/**
